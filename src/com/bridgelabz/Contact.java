@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class Contact {
 
 
-    String firstName,state,lastName,address,city,email;
-    long zip,phoneNumber,addressBookIndex;
+    String firstName, state, lastName, address, city, email;
+    long zip, phoneNumber, addressBookIndex;
 
     public String getFirstName() {
         return firstName;
@@ -80,48 +80,43 @@ public class Contact {
         this.addressBookIndex = addressBookIndex;
     }
 
-    public void getdata(String firstName)
-    {
+    public void getdata(String firstName) {
         Scanner scanner = new Scanner(System.in);
         this.firstName = firstName;
         System.out.println("Enter last name     :    ");
-        lastName=scanner.nextLine();
+        lastName = scanner.nextLine();
         System.out.println("Enter address       :    ");
-        address=scanner.nextLine();
+        address = scanner.nextLine();
         System.out.println("Enter city          :    ");
-        city=scanner.nextLine();
+        city = scanner.nextLine();
         System.out.println("Enter state         :    ");
-        state=scanner.nextLine();
+        state = scanner.nextLine();
         System.out.println("Enter E-mail        :    ");
-        email=scanner.nextLine();
+        email = scanner.nextLine();
         System.out.println("Enter zip code      :    ");
-        zip=scanner.nextLong();
+        zip = scanner.nextLong();
         System.out.println("Enter contact number:    ");
-        phoneNumber=scanner.nextLong();
+        phoneNumber = scanner.nextLong();
     }
 
-    public void display()
-
-    {
+    public void display() {
         System.out.println("\n\n\n");
-        System.out.println("First name          :    "+firstName);
-        System.out.println("Last name           :    "+lastName);
-        System.out.println("Address             :    "+address);
-        System.out.println("City                :    "+city);
-        System.out.println("State               :    "+state);
-        System.out.println("E-mail Id           :    "+email);
-        System.out.println("Zip code            :    "+zip);
-        System.out.println("Contact Number      :    "+phoneNumber);
+        System.out.println("First name          :    " + firstName);
+        System.out.println("Last name           :    " + lastName);
+        System.out.println("Address             :    " + address);
+        System.out.println("City                :    " + city);
+        System.out.println("State               :    " + state);
+        System.out.println("E-mail Id           :    " + email);
+        System.out.println("Zip code            :    " + zip);
+        System.out.println("Contact Number      :    " + phoneNumber);
     }
-    public boolean search(String name)
-    {
-        if(this.firstName.equalsIgnoreCase(name))
+
+    public boolean search(String name) {
+        if (this.firstName.equalsIgnoreCase(name))
             return true;
         else
             return false;
     }
-
-
 
 
 }
