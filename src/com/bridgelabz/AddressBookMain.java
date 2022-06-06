@@ -3,25 +3,22 @@ package com.bridgelabz;
 import jdk.swing.interop.SwingInterOpUtils;
 
 import java.util.ArrayList;
+
 import java.util.List;
 import java.util.Scanner;
 
 public class AddressBookMain {
+    static Scanner scanner = new Scanner(System.in);
    static List<Contact> addressBook = new ArrayList<>();
     public static void main(String[] args) {
         System.out.println("Welcome to Address Book Program ...");
-        Scanner scanner = new Scanner(System.in);
+       
         int choice, flag = 0;
         String name;
         Contact contact = new Contact();
         Contact contact2 = new Contact();
 
-        //  contact.getdata("aaaa");
-        //  contact2.getdata("bbb");
-//        addressBook.add(contact);
-//        addressBook.add(contact2);
-
-        while (true) {
+         while (true) {
 
 
             System.out.println("1. ADD CONTACT");
@@ -41,10 +38,9 @@ public class AddressBookMain {
                     addressBook.add(temp);
                     break;
                 case 2:
-
+                    addMultiple();
                     break;
                 case 3:
-                    //   Contact temp = new Contact();
                     System.out.println("Enter first name to edit     : ");
                     name = scanner.next();
                     for (Contact contact1 : addressBook) {
@@ -66,11 +62,6 @@ public class AddressBookMain {
                 case 4:
                     System.out.println("Enter first name to edit     : ");
                     name = scanner.next();
-                    // Contact contact2;
-//                addressBook.stream().forEach(contact1 -> {
-//                    if(name.equalsIgnoreCase(contact1.getFirstName()))
-//                        contact1.display();
-//                });
                     for (Contact contact1 : addressBook) {
                         if (contact1.getFirstName().equalsIgnoreCase(name)) {
                             contact2 = contact1;
@@ -99,7 +90,19 @@ public class AddressBookMain {
             }
         }
     }
-
-
-
+            public static void addMultiple()
+            {
+                int count;
+                Contact contact =new Contact();
+                List<Contact> mulipleContacts = new ArrayList<>();
+                System.out.println("Enter how  many number of contacts you want to insert : ");
+                count = scanner.nextInt();
+                System.out.println("Enter the data for "+count+" contacts");
+                for(int i=0;i<count;i++) {
+                    System.out.println("Enter name   :   ");
+                    contact.getdata(scanner.next());
+                    mulipleContacts.add(contact);
+                }
+                addressBook.addAll(mulipleContacts);
+            }
 }
